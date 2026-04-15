@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
+import logo from "./logo.webp";
 import backend from "./backend.png";
 import creator from "./creator.png";
-import mobile from "./mobile.png";
+// import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
@@ -19,7 +19,7 @@ import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+// import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -34,7 +34,7 @@ export {
   logo,
   backend,
   creator,
-  mobile,
+  // mobile,
   web,
   github,
   menu,
@@ -51,7 +51,7 @@ export {
   redux,
   tailwind,
   typescript,
-  threejs,
+  // threejs,
   meta,
   shopify,
   starbucks,

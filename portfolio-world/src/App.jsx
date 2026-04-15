@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import Hero from "./components/hero.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 const App = ()=>{
   return (
