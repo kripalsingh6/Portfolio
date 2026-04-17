@@ -13,7 +13,7 @@ export default function Navbar(){
     return(
         <nav className={` ${styles.paddingX} w-full flex 
         items-center py-5 top-0 z-20
-         bg-primary`}>
+         bg-[#050816]`}>
             <div className="w-full flex 
              
             justify-between 
@@ -38,15 +38,15 @@ export default function Navbar(){
                     </p>
                 </Link>
                 <ul className="list-none hidden sm:flex flex-row gap-10"> 
-                    {navLinks.map((link)=>(
-                        <li key={link.id}
-                        className={`${active===link.title 
+                    {navLinks.map((nav)=>(
+                        <li key={nav.id}
+                        className={`${active===nav.title 
                         ? "text-white" 
-                        : "text-secondary"}
+                        : "text-[#aaa6c3]"}
                         hover:text-white text-[18px]
                         font-medium cursor-pointer`}
-                        onClick={() => setActive(link.title)}>
-                            <a href={`#${link.id}`}>{link.title}</a>
+                        onClick={() => setActive(nav.title)}>
+                            <a href={`#${nav.id}`}>{nav.title}</a>
                         </li>
                     ))}
                 </ul>
