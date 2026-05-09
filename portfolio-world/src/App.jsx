@@ -2,6 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import Hero from "./components/hero.jsx";
 import Navbar from "./components/Navbar.jsx";
 import About from "./components/about.jsx";
+import Experience from "./components/experience.jsx";
 
 const App = ()=>{
   return (
@@ -11,12 +12,11 @@ const App = ()=>{
             <Navbar/>
             <Hero></Hero>
     </div>
-    <div className=" relative z-0">
       <About></About>
+      <Experience></Experience>
+      
 
     </div>
-    
-   </div>
     </BrowserRouter>
   
   )

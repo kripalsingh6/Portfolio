@@ -1,30 +1,31 @@
 import React from 'react';
 import {Tilt} from 'react-tilt';
-import { motion, scale } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import styles from '../style.js';
 import {services} from '../constants';
 import {fadeIn , textVariant} from '../utils/motion';
 
-import {SectionWrapper} from '../hoc';
+import SectionWrapper from '../hoc/SectionWrapper';
 
 
 const ServiceCard = ({index , title , icon})=>{
   return(
-      <Tilt className="xs: w-[250px] ">
+      <Tilt className="w-full max-w-[250px] "
+      options={{
+            max:45,
+            scale:1,
+            speed:450
+           }}>
         <motion.div 
         variants={fadeIn("right", "spring" , 0.5 * index,0.75)}
         className='w-full green-pink-gradient p-[1px] 
         rounded-[20px] shadow-card'>
            
-           <div options={{
-            max:45,
-            scale:1,
-            speed:450
-           }}
+           <div 
            className='bg-[#151030] rounded-[20px] 
            py-5 px-12 min-h-[280px] flex 
-           justify-evenly items-center flex-col '>
+           justify-evenly items-center flex-col ring-2 ring-blue-500/50'>
 
             <img src={icon} alt={title}
             className='w-16 h-16 object-contain'>
@@ -57,19 +58,27 @@ const ServiceCard = ({index , title , icon})=>{
 
        <motion.p 
        variants={fadeIn("","",0.1,1)}
-       className='mt-4 text-[#aaa6c3] text-[17px] max-w-5xl leading-[30px] flex  '>
+       className=' mt-4 mb-10 text-[#aaa6c3] text-[17px] 
+       max-w-5xl leading-[30px]  '>
 
-        I am a passionate MERN Stack Developer with strong expertise in building dynamic, scalable, and user-friendly web applications using MongoDB, Express.js, React.js, and Node.js. I enjoy turning complex problems into simple, efficient solutions and have hands-on experience developing full-stack projects with modern technologies.<br></br>
+        I am a passionate MERN Stack Developer with strong expertise in building dynamic, 
+        scalable, and user-friendly web applications using MongoDB, Express.js, React.js, 
+        and Node.js. I enjoy turning complex problems into simple, efficient solutions and
+         have hands-on experience developing full-stack projects with modern technologies.<br></br>
 
-          I am proficient in JavaScript, RESTful APIs, and responsive design, and I continuously strive to learn new tools and best practices to improve performance and user experience. I am a quick learner, collaborative team player, and committed to writing clean, maintainable code that solves real-world problems.<br></br>
+          I am proficient in JavaScript, RESTful APIs, and responsive design, and 
+          I continuously strive to learn new tools and best practices to improve performance 
+          and user experience. I am a quick learner, collaborative team player, and committed 
+          to writing clean, maintainable code that solves real-world problems.<br></br>
 
-         I am actively seeking opportunities to contribute my skills, grow as a developer, and build impactful applications.
+         I am actively seeking opportunities to contribute my skills, grow as a developer, 
+         and build impactful applications.<br></br>
 
 
 
-       </motion.p>
+       </motion.p><br></br>
 
-       <div className='mt-20 flex justify-center flex-wrap gap-10'>
+       <div className=' mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center'>
         {services.map((service , index)=>(
             <ServiceCard key={service.title} 
             index={index} {...service}/>
@@ -77,7 +86,7 @@ const ServiceCard = ({index , title , icon})=>{
 
        </div>
        </>
-    )
+    );
 }
 
 export default SectionWrapper(About,"about");
