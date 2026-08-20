@@ -1,7 +1,62 @@
-export default function Hero(){
-    return(
-        <div>
-            hero
+import { motion } from 'framer-motion';
+import styles from "../style.js";
+import { ComputersCanvas } from './canvas/computers.jsx';
+
+export default function Hero() {
+  return (
+    <section className='relative w-full h-screen mx-auto flex flex-col items-center justify-between'>
+      <div className={`${styles.paddingX} absolute inset-0 top-[130px] sm:top-[140px] w-full max-w-5xl pl-4 sm:pl-12 md:pl-16 pr-4 flex flex-row items-start gap-5 z-10 pointer-events-none`}>
+        <div className='flex flex-col justify-center items-center mt-5'>
+          <div className='w-5 h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />
+          <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
-    )
+
+        <div className='pointer-events-auto'>
+          <h1 className='font-black text-white lg:text-[72px] sm:text-[56px] xs:text-[46px] text-[36px] lg:leading-[88px] mt-2'>
+            Hi, I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] via-[#b87dff] to-[#00cea8]'>Kripal</span>
+          </h1>
+          <p className='sm:text-[18px] text-[14px] text-[#aaa6c3] font-medium tracking-wide mt-3 max-w-2xl leading-[28px]'>
+            Full-Stack Engineer & CS (Data Science) undergraduate specializing in building production-ready AI tools (Gemini API), scalable MERN web systems, and solving 200+ DSA problems.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 mt-6">
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-[#915eff] to-[#00cea8] text-white font-bold text-sm shadow-lg hover:shadow-[0_0_25px_rgba(145,94,255,0.5)] hover:scale-105 transition-all duration-300"
+            >
+              View Projects 🚀
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 hover:border-white/40 transition-all duration-300"
+            >
+              Get In Touch ✉️
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full h-full pt-28">
+        <ComputersCanvas />
+      </div>
+
+      <div className='absolute xs:bottom-6 bottom-10 w-full flex justify-center items-center z-10'>
+        <a href='#about'>
+          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3]/50 flex justify-center items-start p-2 hover:border-[#915eff] transition-colors'>
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+              className="w-3 h-3 rounded-full bg-[#915eff] mb-1 shadow-[0_0_10px_#915eff]"
+            />
+          </div>
+        </a>
+      </div>
+    </section>
+  );
 }
