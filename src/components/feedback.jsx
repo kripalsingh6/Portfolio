@@ -130,58 +130,56 @@ const Feedbacks = () => {
     : "5.0";
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full max-w-5xl pl-4 sm:pl-12 md:pl-16 pr-4">
-        <div className="bg-[#0f0c29]/80 backdrop-blur-lg rounded-[28px] p-6 sm:p-10 border border-white/5 shadow-2xl">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
-            <motion.div variants={textVariant()}>
-              <p className={styles.sectionSubText}>WHAT OTHERS SAY</p>
-              <div className="flex flex-wrap items-center gap-4">
-                <h2 className={styles.sectionHeadText}>Testimonials.</h2>
-                {testimonialList.length > 0 && (
-                  <div className="flex items-center gap-2 bg-[#151030] px-4 py-1.5 rounded-full border border-white/10 shadow-md">
-                    <span className="text-[#ffd700] text-sm font-bold">★ {avgRating}</span>
-                    <span className="text-secondary text-xs">({testimonialList.length} reviews)</span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-
-            {testimonialList.length !== initialTestimonials.length && (
-              <button
-                onClick={handleReset}
-                className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-xl hover:opacity-90 transition-opacity shadow-md cursor-pointer"
-              >
-                Reset Testimonials
-              </button>
-            )}
-          </div>
-
-          {testimonialList.length > 0 ? (
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <AnimatePresence>
-                {testimonialList.map((testimonial, index) => (
-                  <FeedbackCard
-                    key={`${testimonial.name}-${index}`}
-                    index={index}
-                    {...testimonial}
-                    onDelete={handleDelete}
-                  />
-                ))}
-              </AnimatePresence>
+    <div className="w-full">
+      <div className="bg-[#0f0c29]/80 backdrop-blur-lg rounded-[28px] p-6 sm:p-10 border border-white/5 shadow-2xl">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+          <motion.div variants={textVariant()}>
+            <p className={styles.sectionSubText}>WHAT OTHERS SAY</p>
+            <div className="flex flex-wrap items-center gap-4">
+              <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+              {testimonialList.length > 0 && (
+                <div className="flex items-center gap-2 bg-[#151030] px-4 py-1.5 rounded-full border border-white/10 shadow-md">
+                  <span className="text-[#ffd700] text-sm font-bold">★ {avgRating}</span>
+                  <span className="text-secondary text-xs">({testimonialList.length} reviews)</span>
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="mt-10 py-12 text-center text-secondary bg-[#151030]/50 rounded-2xl border border-white/5">
-              <p className="text-lg">All testimonials have been removed.</p>
-              <button
-                onClick={handleReset}
-                className="mt-4 px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-xl hover:opacity-90 transition-opacity shadow-md cursor-pointer"
-              >
-                Restore Testimonials
-              </button>
-            </div>
+          </motion.div>
+
+          {testimonialList.length !== initialTestimonials.length && (
+            <button
+              onClick={handleReset}
+              className="px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-xl hover:opacity-90 transition-opacity shadow-md cursor-pointer"
+            >
+              Reset Testimonials
+            </button>
           )}
         </div>
+
+        {testimonialList.length > 0 ? (
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <AnimatePresence>
+              {testimonialList.map((testimonial, index) => (
+                <FeedbackCard
+                  key={`${testimonial.name}-${index}`}
+                  index={index}
+                  {...testimonial}
+                  onDelete={handleDelete}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        ) : (
+          <div className="mt-10 py-12 text-center text-secondary bg-[#151030]/50 rounded-2xl border border-white/5">
+            <p className="text-lg">All testimonials have been removed.</p>
+            <button
+              onClick={handleReset}
+              className="mt-4 px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-xl hover:opacity-90 transition-opacity shadow-md cursor-pointer"
+            >
+              Restore Testimonials
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

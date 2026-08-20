@@ -9,7 +9,7 @@ import { textVariant } from '../utils/motion';
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: '#1d1836', color: '#fff' }}
+    contentStyle={{ background: '#1d1836', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)' }}
     contentArrowStyle={{ borderRight: '7px solid #232631' }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => (
       <h3 className='text-white text-[24px] font-bold'>
         {experience.title}
       </h3>
-      <p className='text-[#aaa6c3] text-[18px] font-semibold' style={{ margin: 0 }}>
+      <p className='text-[#aaa6c3] text-[16px] font-semibold' style={{ margin: 0 }}>
         {experience.company_name}
       </p>
     </div>
@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }) => (
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
-          className='text-white-100 text-[14px] pl-1 tracking-wider'
+          className='text-[#aaa6c3] text-[14px] pl-1 tracking-wider leading-[22px]'
         >
           {point}
         </li>
@@ -46,25 +46,22 @@ const ExperienceCard = ({ experience }) => (
 
 const Experience = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      {/* Work Experience Header & Timeline container aligned with left padding */}
-      <div className="w-full max-w-5xl pl-4 sm:pl-12 md:pl-16 pr-4">
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>
-            MY JOURNEY & ACCOMPLISHMENTS
-          </p>
-          <h2 className={styles.sectionHeadText}>
-            Experience & Education.
-          </h2>
-        </motion.div>
+    <div className="w-full">
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>
+          MY JOURNEY & ACCOMPLISHMENTS
+        </p>
+        <h2 className={styles.sectionHeadText}>
+          Experience & Education.
+        </h2>
+      </motion.div>
 
-        <div className='mt-16 sm:mt-20 flex flex-col'>
-          <VerticalTimeline>
-            {experiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
-            ))}
-          </VerticalTimeline>
-        </div>
+      <div className='mt-16 sm:mt-20 flex flex-col'>
+        <VerticalTimeline>
+          {experiences.map((experience, index) => (
+            <ExperienceCard key={index} experience={experience} />
+          ))}
+        </VerticalTimeline>
       </div>
     </div>
   );

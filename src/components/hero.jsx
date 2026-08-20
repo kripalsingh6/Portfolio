@@ -5,7 +5,7 @@ import { ComputersCanvas } from './canvas/computers.jsx';
 export default function Hero() {
   return (
     <section className='relative w-full h-screen mx-auto flex flex-col items-center justify-between'>
-      <div className={`${styles.paddingX} absolute inset-0 top-[130px] sm:top-[140px] w-full max-w-5xl pl-4 sm:pl-12 md:pl-16 pr-4 flex flex-row items-start gap-5 z-10 pointer-events-none`}>
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-16 absolute inset-0 top-[120px] sm:top-[135px] flex flex-row items-start gap-5 z-10 pointer-events-none">
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />
           <div className='w-1 sm:h-80 h-40 violet-gradient' />

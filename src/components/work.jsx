@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1.02,
           speed: 400,
         }}
-        className="bg-gradient-to-b from-[#151030] to-[#0d0927] p-6 rounded-3xl sm:w-[350px] w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-xl hover:shadow-[0_10px_30px_rgba(145,94,255,0.25)] flex flex-col justify-between h-full"
+        className="bg-gradient-to-b from-[#151030] to-[#0d0927] p-6 rounded-3xl w-full border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-xl hover:shadow-[0_10px_30px_rgba(145,94,255,0.25)] flex flex-col justify-between h-full"
       >
         <div>
           <div className="relative w-full h-[220px] rounded-2xl overflow-hidden group">
@@ -72,27 +72,25 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full max-w-5xl pl-4 sm:pl-12 md:pl-16 pr-4">
-        <motion.div variants={textVariant()}>
-          <p className={`${styles.sectionSubText}`}>MY WORK</p>
-          <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-        </motion.div>
+    <div className="w-full">
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText}`}>MY WORK</p>
+        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+      </motion.div>
 
-        <div className="w-full flex">
-          <motion.p
-            variants={fadeIn("", "", 0.1, 1)}
-            className="mt-3 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] max-w-3xl"
-          >
-            The following technical projects demonstrate my skills in architecting production-ready AI platforms, full-stack web applications, RESTful APIs, and database schemas based on real-world engineering requirements.
-          </motion.p>
-        </div>
+      <div className="w-full flex">
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-3 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] max-w-3xl"
+        >
+          The following technical projects demonstrate my skills in architecting production-ready AI platforms, full-stack web applications, RESTful APIs, and database schemas based on real-world engineering requirements.
+        </motion.p>
+      </div>
 
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-start">
-          {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
-          ))}
-        </div>
+      <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-start">
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
       </div>
     </div>
   );
