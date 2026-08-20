@@ -36,26 +36,28 @@ const ServiceCard = ({ index, title, icon }) => {
 
 const About = () => {
   return (
-    <div className="w-full">
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+    <div className="w-full flex flex-col items-center justify-center">
+      <div className="w-full max-w-4xl mx-auto flex flex-col items-start">
+        <motion.div variants={textVariant()}>
+          <p className={styles.sectionSubText}>Introduction</p>
+          <h2 className={styles.sectionHeadText}>Overview.</h2>
+        </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 mb-6 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] max-w-4xl"
-      >
-        I am an innovative Full-Stack Engineer and final-year Computer Science (Data Science) undergraduate at RGPV Bhopal with a <span className="text-white font-semibold">7.43 CGPA</span>. I specialize in architecting production-ready AI tools using the <span className="text-white font-semibold">Gemini 1.5 Flash API</span>, scalable MERN stack web applications (<span className="text-[#915eff]">MongoDB, Express.js, React.js, Node.js</span>), user authentication systems (Passport.js), and payment gateways (Razorpay).
-        <br />
-        <br />
-        With a solid algorithmic foundation backed by <span className="text-[#00cea8] font-semibold">200+ solved DSA problems</span> across LeetCode & GeeksforGeeks, I enjoy turning complex software challenges into clean, high-performance, maintainable web products.
-      </motion.p>
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-4 mb-6 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] w-full"
+        >
+          I am an innovative Full-Stack Engineer and final-year Computer Science (Data Science) undergraduate at RGPV Bhopal with a <span className="text-white font-semibold">7.43 CGPA</span>. I specialize in architecting production-ready AI tools using the <span className="text-white font-semibold">Gemini 1.5 Flash API</span>, scalable MERN stack web applications (<span className="text-[#915eff]">MongoDB, Express.js, React.js, Node.js</span>), user authentication systems (Passport.js), and payment gateways (Razorpay).
+          <br />
+          <br />
+          With a solid algorithmic foundation backed by <span className="text-[#00cea8] font-semibold">200+ solved DSA problems</span> across LeetCode & GeeksforGeeks, I enjoy turning complex software challenges into clean, high-performance, maintainable web products.
+        </motion.p>
 
-      <div className="mt-12 sm:mt-16 flex flex-wrap gap-7 justify-start items-center">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+        <div className="mt-12 sm:mt-16 flex flex-wrap gap-7 justify-center items-center w-full">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))}
+        </div>
       </div>
     </div>
   );
