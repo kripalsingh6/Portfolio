@@ -30,7 +30,7 @@ export default function Navbar() {
         scrolled ? "bg-[#050816]/85 backdrop-blur-md border-b border-white/10 shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-7xl mx-auto pl-10 sm:pl-20 md:pl-28 pr-6 sm:pr-12 flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16 flex items-center justify-between">
         {/* Left Side: Brand Logo */}
         <Link
           to="/"

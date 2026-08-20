@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full mt-16 sm:mt-24 bg-[#090617]/95 border-t border-white/10 pt-16 pb-12 relative z-10 text-white">
-      <div className="w-full max-w-7xl mx-auto pl-10 sm:pl-20 md:pl-28 pr-6 sm:pr-12">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           
           {/* Brand & Badges */}
