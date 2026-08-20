@@ -72,25 +72,27 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className="w-full">
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>MY WORK</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
+    <div className="w-full flex flex-col items-center justify-center">
+      <div className="w-full max-w-4xl mx-auto flex flex-col items-start">
+        <motion.div variants={textVariant()}>
+          <p className={`${styles.sectionSubText}`}>MY WORK</p>
+          <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] max-w-3xl"
-        >
-          The following technical projects demonstrate my skills in architecting production-ready AI platforms, full-stack web applications, RESTful APIs, and database schemas based on real-world engineering requirements.
-        </motion.p>
-      </div>
+        <div className="w-full flex">
+          <motion.p
+            variants={fadeIn("", "", 0.1, 1)}
+            className="mt-3 text-[#aaa6c3] text-[16px] sm:text-[17px] leading-[30px] w-full"
+          >
+            The following technical projects demonstrate my skills in architecting production-ready AI platforms, full-stack web applications, RESTful APIs, and database schemas based on real-world engineering requirements.
+          </motion.p>
+        </div>
 
-      <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-start">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-start w-full">
+          {projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))}
+        </div>
       </div>
     </div>
   );
