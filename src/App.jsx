@@ -25,14 +25,12 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
-        <div className="relative z-0 overflow-x-clip mb-12 sm:mb-20 pb-12 sm:pb-16">
+        <div className="relative z-0 overflow-x-clip mb-6 sm:mb-10">
           <Contact />
           <StarsCanvas />
-          
         </div>
         <Footer />
       </div>
-      
     </BrowserRouter>
   );
 };

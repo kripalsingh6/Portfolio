@@ -62,28 +62,25 @@ const socialLinks = [
   { icon: <GFGIcon />, href: "https://geeksforgeeks.org", label: "GFG" },
 ];
 
-/* ─── Component ────────────────────────────────────────────── */
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer
-      style={{ background: "#050816", borderTop: "1px solid rgba(255,255,255,0.08)" }}
-      className="w-full text-white relative z-10 overflow-x-clip"
-    >
-      {/* ── Top section: brand + columns ── */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-20 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16">
+    <footer className="w-full max-w-7xl mx-auto px-4 sm:px-16 pb-12 sm:pb-16 relative z-10 overflow-x-clip">
+      <div className="bg-gradient-to-b from-[#0f0c29]/90 via-[#151030]/85 to-[#0d0927]/95 backdrop-blur-xl rounded-[28px] sm:rounded-[36px] p-6 sm:p-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:border-[#915eff]/30 transition-all duration-300">
+        
+        {/* ── Top section: brand + columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand column */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2.5">
-              <img src={logo} alt="logo" className="w-8 h-8 object-contain" />
-              <span className="text-sm font-semibold leading-tight text-white tracking-wide">
+              <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+              <span className="text-base font-semibold leading-tight text-white tracking-wide">
                 Kripal Singh<br />
                 <span className="text-[#915eff]">Thakur</span>
               </span>
             </div>
-            <p className="text-[13px] text-[#7a7d96] leading-relaxed max-w-[240px]">
+            <p className="text-[13.5px] text-[#7a7d96] leading-relaxed max-w-[240px]">
               Full-Stack Engineer &amp; Competitive Programmer crafting performant, scalable web experiences.
             </p>
             <div className="flex flex-col gap-1.5 mt-1">
@@ -92,10 +89,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Link columns - shifted to the right on PC with clean left-aligned text */}
+          {/* Link columns */}
           {footerColumns.map((col) => (
-            <div key={col.heading} className="flex flex-col gap-3.5 lg:ml-auto w-fit text-left">
-              <h4 className="text-xs font-semibold text-white tracking-wider uppercase">
+            <div key={col.heading} className="flex flex-col gap-3.5">
+              <h4 className="text-xs font-bold text-white tracking-wider uppercase">
                 {col.heading}
               </h4>
               <ul className="list-none m-0 p-0 flex flex-col gap-2.5">
@@ -120,57 +117,40 @@ const Footer = () => {
             </div>
           ))}
         </div>
-      </div>
 
-      {/* ── Divider ── */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-20">
-        <div className="border-t border-white/10" />
-      </div>
+        {/* ── Inner Divider ── */}
+        <div className="border-t border-white/10 my-8 sm:my-10" />
 
-      {/* ── Social icons row ── */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-20 py-5 sm:py-6">
-        <div className="flex gap-2.5 sm:gap-3 flex-wrap lg:justify-end">
-          {socialLinks.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-[#7a7d96] hover:text-white border border-white/10 hover:border-white/30 transition-all bg-white/5"
-            >
-              {s.icon}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Divider ── */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-20">
-        <div className="border-t border-white/10" />
-      </div>
-
-      {/* ── Bottom bar ── */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-12 lg:px-20 py-5">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
-          {/* Left: legal / copyright */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5 text-xs text-[#44475a]">
-            <span>Privacy</span>
-            <span>©&nbsp;{new Date().getFullYear()} Kripal Singh Thakur. All rights reserved.</span>
+        {/* ── Social icons & Bottom bar inside the Card ── */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Social icons */}
+          <div className="flex gap-2.5 sm:gap-3 flex-wrap justify-center md:justify-start">
+            {socialLinks.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-[#7a7d96] hover:text-white hover:border-[#915eff]/50 border border-white/10 hover:scale-110 transition-all bg-[#151030]/80 shadow-md"
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
 
-          {/* Right: status + back to top */}
-          <div className="flex items-center gap-4 sm:gap-5">
-            {/* Pulsing status indicator */}
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00cea8] inline-block animate-pulse" />
-              <span className="text-xs text-[#44475a]">Open to Opportunities</span>
-            </div>
+          {/* Center: Open to opportunities */}
+          <div className="flex items-center gap-2 bg-[#151030] px-4 py-1.5 rounded-full border border-white/10 shadow-inner">
+            <span className="w-2 h-2 rounded-full bg-[#00cea8] inline-block animate-pulse" />
+            <span className="text-xs text-[#aaa6c3] font-medium">Open to Opportunities</span>
+          </div>
 
-            {/* Back to top */}
+          {/* Right: Copyright & Back to Top */}
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-6 text-xs text-[#7a7d96]">
+            <span>©&nbsp;{new Date().getFullYear()} Kripal Singh Thakur.</span>
             <button
               onClick={scrollToTop}
-              className="text-xs text-[#44475a] hover:text-white flex items-center gap-1 cursor-pointer transition-colors bg-transparent border-none p-0"
+              className="text-xs text-[#aaa6c3] hover:text-white flex items-center gap-1.5 cursor-pointer transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10"
             >
               Back to top
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -179,6 +159,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
+
       </div>
     </footer>
   );
