@@ -66,9 +66,8 @@ const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="w-full flex flex-col items-center justify-center px-4 sm:px-16 pb-12 sm:pb-16 relative z-10 overflow-x-clip">
-      <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-[#0f0c29]/90 backdrop-blur-xl rounded-[28px] p-6 sm:p-10 border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.6)] w-full">
+    <footer className="w-full bg-[#050816] border-t border-white/10 relative z-10 pt-14 sm:pt-18 pb-12 sm:pb-16 overflow-x-clip">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16">
         
         {/* ── Top section: brand + columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
@@ -81,7 +80,7 @@ const Footer = () => {
                 <span className="text-[#915eff]">Thakur</span>
               </span>
             </div>
-            <p className="text-[13.5px] text-[#7a7d96] leading-relaxed max-w-[240px]">
+            <p className="text-[13.5px] text-[#7a7d96] leading-relaxed max-w-[260px]">
               Full-Stack Engineer &amp; Competitive Programmer crafting performant, scalable web experiences.
             </p>
             <div className="flex flex-col gap-1.5 mt-1">
@@ -122,7 +121,7 @@ const Footer = () => {
         {/* ── Inner Divider ── */}
         <div className="border-t border-white/10 my-8 sm:my-10" />
 
-        {/* ── Social icons & Bottom bar inside the Card ── */}
+        {/* ── Social icons & Bottom bar ── */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Social icons */}
           <div className="flex gap-2.5 sm:gap-3 flex-wrap justify-center md:justify-start">
@@ -133,7 +132,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-xl flex items-center justify-center text-[#7a7d96] hover:text-white hover:border-[#915eff]/50 border border-white/10 hover:scale-110 transition-all bg-[#151030]/80 shadow-md"
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-[#7a7d96] hover:text-white hover:border-[#915eff]/50 border border-white/10 hover:scale-110 transition-all bg-white/5 shadow-md"
               >
                 {s.icon}
               </a>
@@ -162,9 +161,8 @@ const Footer = () => {
         </div>
 
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
 };
 
 export default Footer;
