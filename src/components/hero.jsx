@@ -4,18 +4,21 @@ import { ComputersCanvas } from './canvas/computers.jsx';
 
 export default function Hero() {
   return (
-    <section className='relative w-full min-h-[580px] sm:min-h-screen sm:h-screen mx-auto flex flex-col items-center justify-between overflow-x-clip pt-28 sm:pt-0 pb-12 sm:pb-0'>
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-16 sm:absolute sm:inset-0 sm:top-[125px] flex flex-row items-start gap-3 sm:gap-5 z-10 sm:pointer-events-none">
-        <div className='flex flex-col justify-center items-center mt-3 sm:mt-5 shrink-0'>
+    <section className='relative w-full sm:h-screen sm:min-h-screen mx-auto flex flex-col overflow-x-clip'>
+      {/* ── Text content ── */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16 pt-[120px] sm:pt-0 sm:absolute sm:inset-0 sm:top-[125px] flex flex-row items-start gap-3 sm:gap-5 z-10 sm:pointer-events-none">
+        {/* Purple dot + gradient line */}
+        <div className='flex flex-col justify-center items-center mt-2 sm:mt-5 shrink-0'>
           <div className='w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />
-          <div className='w-1 h-32 sm:h-80 violet-gradient' />
+          <div className='w-1 h-28 sm:h-80 violet-gradient' />
         </div>
 
-        <div className='sm:pointer-events-auto pr-2'>
-          <h1 className='font-black text-white text-[32px] xs:text-[40px] sm:text-[56px] lg:text-[72px] leading-tight sm:leading-[88px] mt-1'>
+        {/* Main text block */}
+        <div className='sm:pointer-events-auto flex-1 min-w-0'>
+          <h1 className='font-black text-white text-[28px] xs:text-[36px] sm:text-[56px] lg:text-[72px] leading-[1.15] sm:leading-[88px] mt-1'>
             Hi, I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] via-[#b87dff] to-[#00cea8]'>Kripal</span>
           </h1>
-          <p className='text-[14px] sm:text-[17px] text-[#aaa6c3] font-medium tracking-wide mt-2 sm:mt-3 max-w-2xl leading-[24px] sm:leading-[28px]'>
+          <p className='text-[14px] sm:text-[17px] text-[#aaa6c3] font-medium tracking-wide mt-3 sm:mt-3 max-w-2xl leading-[22px] sm:leading-[28px]'>
             Full-Stack Engineer & CS (Data Science) undergraduate specializing in building production-ready AI tools (Gemini API), scalable MERN web systems, and solving 200+ DSA problems.
           </p>
 
@@ -36,12 +39,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3D Canvas only visible & loaded on desktop / tablet (hidden on mobile) */}
+      {/* ── 3D Canvas: only on desktop/tablet ── */}
       <div className="hidden sm:block w-full h-full pt-24">
         <ComputersCanvas />
       </div>
 
-      <div className='sm:absolute bottom-4 sm:bottom-8 w-full flex justify-center items-center z-10 pointer-events-auto mt-8 sm:mt-0'>
+      {/* ── Scroll indicator ── */}
+      <div className='w-full flex justify-center items-center z-10 pointer-events-auto py-10 sm:py-0 sm:absolute sm:bottom-8'>
         <a href='#about' aria-label="Scroll down to About section">
           <div className='w-[30px] sm:w-[35px] h-[54px] sm:h-[64px] rounded-3xl border-2 sm:border-4 border-[#aaa6c3]/50 flex justify-center items-start p-1.5 sm:p-2 hover:border-[#915eff] transition-colors'>
             <motion.div
