@@ -66,8 +66,9 @@ const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="w-full max-w-7xl mx-auto px-4 sm:px-16 pb-12 sm:pb-16 relative z-10 overflow-x-clip">
-      <div className="bg-gradient-to-b from-[#0f0c29]/90 via-[#151030]/85 to-[#0d0927]/95 backdrop-blur-xl rounded-[28px] sm:rounded-[36px] p-6 sm:p-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:border-[#915eff]/30 transition-all duration-300">
+    <footer className="w-full flex flex-col items-center justify-center px-4 sm:px-16 pb-12 sm:pb-16 relative z-10 overflow-x-clip">
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="bg-[#0f0c29]/90 backdrop-blur-xl rounded-[28px] p-6 sm:p-10 border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.6)] w-full">
         
         {/* ── Top section: brand + columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
@@ -161,8 +162,9 @@ const Footer = () => {
         </div>
 
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
 };
 
 export default Footer;
