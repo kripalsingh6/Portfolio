@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className='relative w-full min-h-[100dvh] sm:h-screen sm:min-h-screen mx-auto flex flex-col overflow-x-clip'>
       {/* ── Text content ── */}
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16 mt-[100px] sm:mt-0 sm:absolute sm:inset-0 sm:top-[125px] flex flex-row items-start gap-3 sm:gap-5 z-10 sm:pointer-events-none">
+      <div className="w-full max-w-7xl mx-auto px-7 xs:px-8 sm:px-16 mt-[120px] xs:mt-[130px] sm:mt-0 sm:absolute sm:inset-0 sm:top-[125px] flex flex-row items-start gap-3 sm:gap-5 z-10 sm:pointer-events-none">
         {/* Purple dot + gradient line — hidden on mobile to save space */}
         <div className='hidden sm:flex flex-col justify-center items-center mt-5 shrink-0'>
           <div className='w-5 h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />

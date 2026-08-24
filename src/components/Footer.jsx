@@ -67,7 +67,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#050816] border-t border-white/10 relative z-10 pt-14 sm:pt-18 pb-12 sm:pb-16 overflow-x-clip">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16">
+      <div className="w-full max-w-7xl mx-auto px-7 xs:px-8 sm:px-16">
         
         {/* ── Top section: brand + columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">

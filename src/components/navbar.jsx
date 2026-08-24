@@ -45,7 +45,7 @@ export default function Navbar() {
         scrolled ? "bg-[#050816]/90 backdrop-blur-md border-b border-white/10 shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16 flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-7 xs:px-8 sm:px-16 flex items-center justify-between">
         {/* Left Side: Brand Logo */}
         <Link
           to="/"
