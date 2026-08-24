@@ -33,19 +33,19 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     layout
-    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+    initial={{ opacity: 0, scale: 0.95, y: 15 }}
     animate={{ opacity: 1, scale: 1, y: 0 }}
     exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.2 } }}
-    variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-    className="relative group bg-gradient-to-b from-[#151030] to-[#0d0927] p-8 rounded-3xl border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-xl hover:shadow-[0_10px_30px_rgba(145,94,255,0.25)] hover:-translate-y-2 flex flex-col justify-between h-full"
+    variants={fadeIn("up", "spring", index * 0.15, 0.75)}
+    className="relative group bg-gradient-to-b from-[#151030] to-[#0d0927] p-5 sm:p-8 rounded-3xl border border-white/10 hover:border-[#915eff]/50 transition-all duration-300 shadow-xl hover:shadow-[0_10px_30px_rgba(145,94,255,0.25)] hover:-translate-y-1 flex flex-col justify-between h-full w-full"
   >
     <div>
-      <div className="flex justify-between items-center mb-6">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#915eff] to-[#00cea8] flex items-center justify-center text-white font-serif text-2xl font-bold shadow-md">
+      <div className="flex justify-between items-center mb-4 sm:mb-6">
+        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-[#915eff] to-[#00cea8] flex items-center justify-center text-white font-serif text-xl sm:text-2xl font-bold shadow-md">
           “
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex gap-1 text-sm tracking-widest">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex gap-1 text-xs sm:text-sm tracking-widest">
             {renderStars(rating)}
           </div>
           <button
@@ -72,22 +72,22 @@ const FeedbackCard = ({
         </div>
       </div>
 
-      <p className="text-white text-[15px] sm:text-[16px] leading-[26px] tracking-wide font-normal mb-6 break-words">
+      <p className="text-white text-[14px] sm:text-[16px] leading-[24px] sm:leading-[26px] tracking-wide font-normal mb-5 sm:mb-6 break-words">
         "{testimonial}"
       </p>
     </div>
 
-    <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+    <div className="pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between gap-3 sm:gap-4">
       <div className="flex flex-col overflow-hidden">
-        <h4 className="text-white font-semibold text-[16px] flex items-center gap-1 truncate">
+        <h4 className="text-white font-semibold text-[14px] sm:text-[16px] flex items-center gap-1 truncate">
           <span className="text-[#00cea8]">@</span> {name}
         </h4>
-        <p className="text-[#aaa6c3] text-[13px] font-medium mt-0.5 truncate">
+        <p className="text-[#aaa6c3] text-[12px] sm:text-[13px] font-medium mt-0.5 truncate">
           {designation} at <span className="text-white">{company}</span>
         </p>
       </div>
 
-      <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-r from-[#915eff] to-[#00cea8] shrink-0">
+      <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full p-[2px] bg-gradient-to-r from-[#915eff] to-[#00cea8] shrink-0">
         <img
           src={image}
           alt={`feedback_by-${name}`}
@@ -132,16 +132,16 @@ const Feedbacks = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-[#0f0c29]/80 backdrop-blur-lg rounded-[28px] p-6 sm:p-10 border border-white/5 shadow-2xl">
+        <div className="bg-[#0f0c29]/80 backdrop-blur-lg rounded-[28px] p-5 sm:p-10 border border-white/5 shadow-2xl">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
             <motion.div variants={textVariant()}>
               <p className={styles.sectionSubText}>WHAT OTHERS SAY</p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <h2 className={styles.sectionHeadText}>Testimonials.</h2>
                 {testimonialList.length > 0 && (
-                  <div className="flex items-center gap-2 bg-[#151030] px-4 py-1.5 rounded-full border border-white/10 shadow-md">
-                    <span className="text-[#ffd700] text-sm font-bold">★ {avgRating}</span>
-                    <span className="text-secondary text-xs">({testimonialList.length} reviews)</span>
+                  <div className="flex items-center gap-2 bg-[#151030] px-3 sm:px-4 py-1.5 rounded-full border border-white/10 shadow-md">
+                    <span className="text-[#ffd700] text-xs sm:text-sm font-bold">★ {avgRating}</span>
+                    <span className="text-secondary text-[11px] sm:text-xs">({testimonialList.length} reviews)</span>
                   </div>
                 )}
               </div>
@@ -158,7 +158,7 @@ const Feedbacks = () => {
           </div>
 
           {testimonialList.length > 0 ? (
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
               <AnimatePresence>
                 {testimonialList.map((testimonial, index) => (
                   <FeedbackCard
@@ -171,8 +171,8 @@ const Feedbacks = () => {
               </AnimatePresence>
             </div>
           ) : (
-            <div className="mt-10 py-12 text-center text-secondary bg-[#151030]/50 rounded-2xl border border-white/5">
-              <p className="text-lg">All testimonials have been removed.</p>
+            <div className="mt-8 sm:mt-10 py-10 sm:py-12 text-center text-secondary bg-[#151030]/50 rounded-2xl border border-white/5">
+              <p className="text-base sm:text-lg">All testimonials have been removed.</p>
               <button
                 onClick={handleReset}
                 className="mt-4 px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#915eff] to-[#00cea8] rounded-xl hover:opacity-90 transition-opacity shadow-md cursor-pointer"

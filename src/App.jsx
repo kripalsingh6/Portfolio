@@ -15,8 +15,8 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-[#050816]">
-        <div className="bg-[url('/src/assets/herobg.png')] bg-cover bg-no-repeat bg-center">
+      <div className="relative z-0 bg-[#050816] w-full min-h-screen overflow-x-hidden">
+        <div className="bg-[url('/src/assets/herobg.png')] bg-cover bg-no-repeat bg-center overflow-x-clip">
           <Navbar />
           <Hero />
         </div>
@@ -25,12 +25,14 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
-        <div className="relative z-0">
+        <div className="relative z-0 overflow-x-clip mb-12 sm:mb-20 pb-12 sm:pb-16">
           <Contact />
           <StarsCanvas />
+          
         </div>
         <Footer />
       </div>
+      
     </BrowserRouter>
   );
 };

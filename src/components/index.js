@@ -1,6 +1,6 @@
 import { BallCanvas, ComputersCanvas, StarsCanvas, CanvasLoader } from './canvas';
 import Hero from './hero.jsx';
-import Navbar from './Navbar.jsx';
+import Navbar from './navbar.jsx';
 import About from './about.jsx';
 import Tech from './tech.jsx';
 import Experience from './experience.jsx';

@@ -15,13 +15,15 @@ const Tech = () => {
           <h2 className={styles.sectionHeadText}>Technical Skills.</h2>
         </motion.div>
 
-        <div className="flex flex-row flex-wrap justify-start gap-10 mt-10 w-full">
+        <div className="flex flex-row flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 mt-8 sm:mt-10 w-full">
           {technologies.map((technology) => (
-            <div className="flex flex-col items-center gap-2" key={technology.name}>
-              <div className="w-28 h-28">
+            <div className="flex flex-col items-center gap-2 group" key={technology.name}>
+              <div className="w-20 h-20 sm:w-28 sm:h-28 transition-transform duration-300 group-hover:scale-110">
                 <BallCanvas icon={technology.icon} />
               </div>
-              <p className="text-secondary text-[14px] font-medium text-center">{technology.name}</p>
+              <p className="text-[#aaa6c3] group-hover:text-white transition-colors text-[13px] sm:text-[14px] font-medium text-center">
+                {technology.name}
+              </p>
             </div>
           ))}
         </div>

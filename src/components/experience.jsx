@@ -9,8 +9,14 @@ import { textVariant } from '../utils/motion';
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: '#1d1836', color: '#fff', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)' }}
-    contentArrowStyle={{ borderRight: '7px solid #232631' }}
+    contentStyle={{
+      background: '#1d1836',
+      color: '#fff',
+      borderRadius: '16px',
+      border: '1px solid rgba(255,255,255,0.08)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+    }}
+    contentArrowStyle={{ borderRight: '7px solid #1d1836' }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
     icon={
@@ -24,18 +30,18 @@ const ExperienceCard = ({ experience }) => (
     }
   >
     <div>
-      <h3 className='text-white text-[24px] font-bold'>
+      <h3 className='text-white text-[18px] sm:text-[22px] font-bold leading-snug'>
         {experience.title}
       </h3>
-      <p className='text-[#aaa6c3] text-[16px] font-semibold' style={{ margin: 0 }}>
+      <p className='text-[#915eff] text-[14px] sm:text-[15px] font-semibold mt-1' style={{ margin: 0 }}>
         {experience.company_name}
       </p>
     </div>
-    <ul className='mt-5 list-disc ml-5 space-y-2'>
+    <ul className='mt-4 list-disc ml-4 space-y-2'>
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
-          className='text-[#aaa6c3] text-[14px] pl-1 tracking-wider leading-[22px]'
+          className='text-[#aaa6c3] text-[13px] sm:text-[14px] pl-1 tracking-normal sm:tracking-wide leading-[20px] sm:leading-[24px]'
         >
           {point}
         </li>
@@ -57,8 +63,8 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        <div className='mt-16 sm:mt-20 flex flex-col w-full'>
-          <VerticalTimeline>
+        <div className='mt-10 sm:mt-16 flex flex-col w-full'>
+          <VerticalTimeline animate={false}>
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} experience={experience} />
             ))}

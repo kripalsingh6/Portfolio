@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 
 import styles from "../style.js";
 import { SectionWrapper } from "../hoc/index.js";
-import { slideIn, textVariant } from "../utils/motion.js";
+import { fadeIn, textVariant } from "../utils/motion.js";
 
 const Contact = () => {
   const formRef = useRef();
@@ -106,11 +106,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="w-full flex flex-col items-center justify-center pb-8 sm:pb-12">
       <div className="w-full max-w-4xl mx-auto">
         <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className="bg-[#0f0c29]/80 backdrop-blur-lg rounded-[28px] p-6 sm:p-10 border border-white/5 shadow-2xl"
+          variants={fadeIn("up", "tween", 0.1, 0.8)}
+          className="bg-[#0f0c29]/90 backdrop-blur-xl rounded-[28px] p-6 sm:p-12 border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.6)] w-full"
         >
           <motion.div variants={textVariant()}>
             <p className={styles.sectionSubText}>GET IN TOUCH</p>
@@ -120,10 +120,10 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-8 flex flex-col gap-6"
+            className="mt-6 sm:mt-8 flex flex-col gap-5 sm:gap-6"
           >
             <label className="flex flex-col gap-2">
-              <span className="text-white font-semibold text-[15px] ml-2">
+              <span className="text-white font-semibold text-[14px] sm:text-[15px] ml-1 sm:ml-2">
                 Your Name <span className="text-[#915eff]">*</span>
               </span>
               <input
@@ -132,12 +132,12 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="What's your full name?"
-                className="bg-[#151030]/90 py-4 px-6 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-full sm:rounded-2xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[15px] shadow-inner"
+                className="bg-[#151030]/90 py-3.5 sm:py-4 px-5 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-2xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[14px] sm:text-[15px] shadow-inner"
               />
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className="text-white font-semibold text-[15px] ml-2">
+              <span className="text-white font-semibold text-[14px] sm:text-[15px] ml-1 sm:ml-2">
                 Your Email <span className="text-[#915eff]">*</span>
               </span>
               <input
@@ -146,17 +146,17 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="What's your email address?"
-                className="bg-[#151030]/90 py-4 px-6 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-full sm:rounded-2xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[15px] shadow-inner"
+                className="bg-[#151030]/90 py-3.5 sm:py-4 px-5 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-2xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[14px] sm:text-[15px] shadow-inner"
               />
             </label>
 
             {/* Interactive Rating Picker */}
             <div className="flex flex-col gap-2">
-              <span className="text-white font-semibold text-[15px] ml-2">
+              <span className="text-white font-semibold text-[14px] sm:text-[15px] ml-1 sm:ml-2">
                 Your Rating <span className="text-[#915eff]">*</span>
               </span>
-              <div className="flex items-center gap-3 bg-[#151030]/90 py-3.5 px-6 sm:px-8 rounded-full sm:rounded-2xl border border-white/10 w-fit">
-                <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-3 bg-[#151030]/90 py-3 px-5 sm:px-8 rounded-2xl border border-white/10 w-fit">
+                <div className="flex gap-1.5 sm:gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
                       key={star}
@@ -164,7 +164,7 @@ const Contact = () => {
                       onClick={() => setRating(star)}
                       onMouseEnter={() => setHoverRating(star)}
                       onMouseLeave={() => setHoverRating(0)}
-                      className="text-2xl transition-transform hover:scale-125 cursor-pointer focus:outline-none"
+                      className="text-xl sm:text-2xl transition-transform hover:scale-125 cursor-pointer focus:outline-none p-0.5"
                     >
                       <span
                         className={
@@ -178,14 +178,14 @@ const Contact = () => {
                     </button>
                   ))}
                 </div>
-                <span className="text-xs font-semibold text-[#aaa6c3] border-l border-white/10 pl-3">
+                <span className="text-xs font-semibold text-[#aaa6c3] border-l border-white/10 pl-2.5 sm:pl-3">
                   {rating} / 5 Stars
                 </span>
               </div>
             </div>
 
             <label className="flex flex-col gap-2">
-              <span className="text-white font-semibold text-[15px] ml-2">
+              <span className="text-white font-semibold text-[14px] sm:text-[15px] ml-1 sm:ml-2">
                 Your Message / Feedback <span className="text-[#915eff]">*</span>
               </span>
               <textarea
@@ -194,7 +194,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Share your feedback, message, or testimonial..."
-                className="bg-[#151030]/90 py-4 px-6 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-3xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[15px] shadow-inner resize-none"
+                className="bg-[#151030]/90 py-3.5 sm:py-4 px-5 sm:px-8 placeholder:text-[#aaa6c3]/60 text-white rounded-2xl sm:rounded-3xl outline-none border border-white/10 focus:border-[#915eff] focus:ring-4 focus:ring-[#915eff]/20 transition-all duration-300 font-medium text-[14px] sm:text-[15px] shadow-inner resize-none"
               />
             </label>
 
@@ -202,7 +202,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`p-4 rounded-2xl font-medium text-sm text-center border ${
+                className={`p-3.5 sm:p-4 rounded-2xl font-medium text-xs sm:text-sm text-center border ${
                   status.type === "success"
                     ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
                     : "bg-rose-500/15 text-rose-300 border-rose-500/30"
@@ -212,16 +212,16 @@ const Contact = () => {
               </motion.div>
             )}
 
-            <div className="pt-2 pb-2 flex justify-start">
+            <div className="pt-3 pb-1 flex justify-start w-full">
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative bg-gradient-to-r from-[#915eff] via-[#7a48ea] to-[#00cea8] py-4 px-10 rounded-full font-bold text-white text-[16px] shadow-xl hover:shadow-[0_0_30px_rgba(145,94,255,0.6)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer overflow-hidden disabled:opacity-50"
+                className="group relative w-full sm:w-auto bg-gradient-to-r from-[#915eff] via-[#7a48ea] to-[#00cea8] py-3.5 sm:py-4 px-8 sm:px-10 rounded-full font-bold text-white text-[15px] sm:text-[16px] shadow-xl hover:shadow-[0_0_30px_rgba(145,94,255,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer overflow-hidden disabled:opacity-50"
               >
                 <span>{loading ? "Sending..." : "Submit Rating & Testimonial"}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"
+                  className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

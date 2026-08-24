@@ -4,31 +4,31 @@ import { ComputersCanvas } from './canvas/computers.jsx';
 
 export default function Hero() {
   return (
-    <section className='relative w-full h-screen mx-auto flex flex-col items-center justify-between'>
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-16 absolute inset-0 top-[120px] sm:top-[135px] flex flex-row items-start gap-5 z-10 pointer-events-none">
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
+    <section className='relative w-full h-screen min-h-[700px] sm:min-h-screen mx-auto flex flex-col items-center justify-between overflow-x-clip'>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-16 absolute inset-0 top-[100px] sm:top-[125px] flex flex-row items-start gap-3 sm:gap-5 z-10 pointer-events-none">
+        <div className='flex flex-col justify-center items-center mt-5 shrink-0'>
+          <div className='w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#915eff] shadow-[0_0_15px_#915eff]' />
+          <div className='w-1 h-36 sm:h-80 violet-gradient' />
         </div>
 
-        <div className='pointer-events-auto'>
-          <h1 className='font-black text-white lg:text-[72px] sm:text-[56px] xs:text-[46px] text-[36px] lg:leading-[88px] mt-2'>
+        <div className='pointer-events-auto pr-2'>
+          <h1 className='font-black text-white text-[32px] xs:text-[40px] sm:text-[56px] lg:text-[72px] leading-tight sm:leading-[88px] mt-1'>
             Hi, I'm <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#915eff] via-[#b87dff] to-[#00cea8]'>Kripal</span>
           </h1>
-          <p className='sm:text-[18px] text-[14px] text-[#aaa6c3] font-medium tracking-wide mt-3 max-w-2xl leading-[28px]'>
+          <p className='text-[13.5px] sm:text-[17px] text-[#aaa6c3] font-medium tracking-wide mt-2 sm:mt-3 max-w-2xl leading-[22px] sm:leading-[28px]'>
             Full-Stack Engineer & CS (Data Science) undergraduate specializing in building production-ready AI tools (Gemini API), scalable MERN web systems, and solving 200+ DSA problems.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 mt-6">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 sm:mt-6">
             <a
               href="#projects"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-[#915eff] to-[#00cea8] text-white font-bold text-sm shadow-lg hover:shadow-[0_0_25px_rgba(145,94,255,0.5)] hover:scale-105 transition-all duration-300"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#915eff] to-[#00cea8] text-white font-bold text-xs sm:text-sm shadow-lg hover:shadow-[0_0_25px_rgba(145,94,255,0.5)] hover:scale-105 transition-all duration-300"
             >
               View Projects 🚀
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 hover:border-white/40 transition-all duration-300"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 hover:border-white/40 transition-all duration-300"
             >
               Get In Touch ✉️
             </a>
@@ -36,23 +36,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full h-full pt-28">
+      <div className="w-full h-full pt-32 sm:pt-24">
         <ComputersCanvas />
       </div>
 
-      <div className='absolute xs:bottom-6 bottom-10 w-full flex justify-center items-center z-10'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-[#aaa6c3]/50 flex justify-center items-start p-2 hover:border-[#915eff] transition-colors'>
+      <div className='absolute bottom-4 sm:bottom-8 w-full flex justify-center items-center z-10 pointer-events-auto'>
+        <a href='#about' aria-label="Scroll down to About section">
+          <div className='w-[30px] sm:w-[35px] h-[54px] sm:h-[64px] rounded-3xl border-2 sm:border-4 border-[#aaa6c3]/50 flex justify-center items-start p-1.5 sm:p-2 hover:border-[#915eff] transition-colors'>
             <motion.div
               animate={{
-                y: [0, 24, 0],
+                y: [0, 20, 0],
               }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
                 repeatType: 'loop',
               }}
-              className="w-3 h-3 rounded-full bg-[#915eff] mb-1 shadow-[0_0_10px_#915eff]"
+              className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#915eff] mb-1 shadow-[0_0_10px_#915eff]"
             />
           </div>
         </a>
