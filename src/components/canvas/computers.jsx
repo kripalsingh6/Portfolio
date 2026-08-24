@@ -33,14 +33,14 @@ const Computers = ({ isMobile }) => {
 useGLTF.preload("/desktop_pc/scene.gltf");
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
-    setIsMobile(mediaQuery.matches);
+    const mediaQuery = window.matchMedia("(min-width: 641px)");
+    setIsDesktop(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+      setIsDesktop(event.matches);
     };
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
@@ -49,8 +49,12 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  if (!isDesktop) {
+    return null;
+  }
+
   return (
-    <div className="w-full h-full relative" style={{ touchAction: "pan-y" }}>
+    <div className="w-full h-full relative hidden sm:block" style={{ touchAction: "pan-y" }}>
       <Canvas
         frameloop="demand"
         shadows
@@ -66,7 +70,7 @@ const ComputersCanvas = () => {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <Computers isMobile={isMobile} />
+          <Computers isMobile={false} />
         </Suspense>
 
         <Preload all />
